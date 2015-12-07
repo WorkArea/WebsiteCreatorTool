@@ -1,10 +1,10 @@
 using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
-using WebsiteCreatorTool.Domain.Contracts;
-using WebsiteCreatorTool.Domain.Handlers;
-using WebsiteCreatorTool.Data;
-using WebsiteCreatorTool.Data.Sql.Repositories;
+//using WebsiteCreatorTool.Domain.Contracts;
+//using WebsiteCreatorTool.Domain.Handlers;
+//using WebsiteCreatorTool.Data;
+//using WebsiteCreatorTool.Data.Sql.Repositories;
 
 namespace WebsiteCreatorTool.WebUI
 {
@@ -36,13 +36,13 @@ namespace WebsiteCreatorTool.WebUI
         /// change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
+            //Method 1: using unity container
+            container.LoadConfiguration("container");
 
-            // TODO: Register your types here
-            container.RegisterType<ISampleService, SampleService>();
-            container.RegisterType<ISampleRepository, SampleRepository>();
-            container.RegisterType<IUnitOfWork, WebsiteCreatorTool.Data.Sql.WebsiteCreatorToolDbContext>();
+            // Method 2: by defining mappings explicitly
+            //container.RegisterType<WebsiteCreatorTool.Data.IUnitOfWork, WebsiteCreatorTool.Data.Sql.WebsiteCreatorToolDbContext>();
+            //container.RegisterType<WebsiteCreatorTool.Domain.Contracts.ISampleService, WebsiteCreatorTool.Domain.Handlers.SampleService>();
+            //container.RegisterType<WebsiteCreatorTool.Data.ISampleRepository, WebsiteCreatorTool.Data.Sql.Repositories.SampleRepository>();
         }
     }
 }

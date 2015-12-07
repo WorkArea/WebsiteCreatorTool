@@ -255,6 +255,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Sample\Index.cshtml" />
     <Content Include="Views\Sample\Add.cshtml" />
+    <Content Include="unity.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
