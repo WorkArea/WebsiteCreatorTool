@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05BD92CE-7078-4635-BB15-59BDFF8C2C3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebsiteCreatorTool.Domain</RootNamespace>
+    <AssemblyName>WebsiteCreatorTool.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\ISampleService.cs" />
+    <Compile Include="Handlers\SampleService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebsiteCreatorTool.Data.Entities\WebsiteCreatorTool.Data.Entities.csproj">
+      <Project>{02c1d5a4-58e3-495e-92bc-4a874a3fd624}</Project>
+      <Name>WebsiteCreatorTool.Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebsiteCreatorTool.Data.Sql\WebsiteCreatorTool.Data.Sql.csproj">
+      <Project>{108bedb4-a824-4e11-a383-cd722b18b944}</Project>
+      <Name>WebsiteCreatorTool.Data.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebsiteCreatorTool.Data\WebsiteCreatorTool.Data.csproj">
+      <Project>{4e6bf75c-3fbf-4db6-b471-fa1e06135137}</Project>
+      <Name>WebsiteCreatorTool.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebsiteCreatorTool.Model\WebsiteCreatorTool.Model.csproj">
+      <Project>{2278dd69-23ab-462f-9ade-5facc71212f1}</Project>
+      <Name>WebsiteCreatorTool.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
